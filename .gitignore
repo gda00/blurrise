@@ -1,0 +1,15 @@
+# Operating System Files
+.DS_Store
+Thumbs.db
+
+# Editor & IDE configs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+
+# Local environment / sandbox
+.ai-jail

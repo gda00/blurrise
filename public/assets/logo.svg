@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+  <defs>
+    <!-- Sunrise Core Gradient -->
+    <linearGradient id="sunriseGrad" x1="20" y1="18" x2="100" y2="96" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFD166" />
+      <stop offset="48%" stop-color="#FF8C42" />
+      <stop offset="100%" stop-color="#FF4E50" />
+    </linearGradient>
+
+    <!-- Background Dark Glass Gradient -->
+    <linearGradient id="bgGlass" x1="0" y1="0" x2="120" y2="120" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#17223B" />
+      <stop offset="100%" stop-color="#0B0F19" />
+    </linearGradient>
+
+    <!-- Frosted Louver Gradient -->
+    <linearGradient id="frostBand" x1="14" y1="60" x2="106" y2="105" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.28" />
+      <stop offset="50%" stop-color="#FF9E6D" stop-opacity="0.16" />
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.08" />
+    </linearGradient>
+
+    <!-- Soft Diffused Sun Filter for Lower Half -->
+    <filter id="sunBlur" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="5.5" />
+    </filter>
+
+    <clipPath id="topHalfClip">
+      <rect x="0" y="0" width="120" height="62" />
+    </clipPath>
+
+    <clipPath id="bottomHalfClip">
+      <rect x="0" y="62" width="120" height="58" />
+    </clipPath>
+  </defs>
+
+  <!-- Outer Squircle Container -->
+  <rect x="6" y="6" width="108" height="108" rx="28" fill="url(#bgGlass)" stroke="#FFFFFF" stroke-opacity="0.14" stroke-width="2" />
+
+  <!-- Subtle Ambient Glow Behind Sun -->
+  <circle cx="60" cy="60" r="36" fill="url(#sunriseGrad)" opacity="0.22" filter="url(#sunBlur)" />
+
+  <!-- Crisp Top Half of Rising Sun -->
+  <g clip-path="url(#topHalfClip)">
+    <circle cx="60" cy="58" r="30" fill="url(#sunriseGrad)" />
+    <!-- Sun Ray Accents -->
+    <path d="M60 16V21M30 28L33.5 31.5M90 28L86.5 31.5M18 56H23M97 56H102" stroke="#FFD166" stroke-width="3" stroke-linecap="round" opacity="0.8" />
+  </g>
+
+  <!-- Diffused / Blurred Bottom Half of Rising Sun -->
+  <g clip-path="url(#bottomHalfClip)">
+    <circle cx="60" cy="58" r="31" fill="url(#sunriseGrad)" filter="url(#sunBlur)" opacity="0.95" />
+    <!-- Pixel/Mosaic Hint Squares inside the blur zone -->
+    <rect x="34" y="66" width="8" height="8" rx="2" fill="#FFAE52" opacity="0.55" />
+    <rect x="44" y="74" width="8" height="8" rx="2" fill="#FF6B4A" opacity="0.55" />
+    <rect x="68" y="66" width="8" height="8" rx="2" fill="#FFD166" opacity="0.55" />
+    <rect x="78" y="74" width="8" height="8" rx="2" fill="#FF6B4A" opacity="0.45" />
+  </g>
+
+  <!-- Frosted Glass Horizon Louvers -->
+  <rect x="16" y="62" width="88" height="10" rx="5" fill="url(#frostBand)" stroke="#FFFFFF" stroke-opacity="0.28" stroke-width="1" />
+  <rect x="22" y="76" width="76" height="10" rx="5" fill="url(#frostBand)" stroke="#FFFFFF" stroke-opacity="0.22" stroke-width="1" />
+  <rect x="30" y="90" width="60" height="9" rx="4.5" fill="url(#frostBand)" stroke="#FFFFFF" stroke-opacity="0.16" stroke-width="1" />
+</svg>
